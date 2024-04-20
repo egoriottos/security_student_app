@@ -29,16 +29,19 @@ import java.util.Arrays;
 public class SecurityConfig {
     final String [] WHITE_LIST = {
             "api/students/user/**",
-            "api/students/auth"
+            "api/students/auth",
+            "login",
+            "signup",
+            "refresh"
     };
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
+                .csrf(AbstractHttpConfigurer::disable)
                 .addFilterBefore(corsFilter(), SessionManagementFilter.class)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         authorizer -> {
 

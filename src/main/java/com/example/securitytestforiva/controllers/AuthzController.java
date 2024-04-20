@@ -4,6 +4,7 @@ import com.example.securitytestforiva.dto.queries.AuthQuery;
 import com.example.securitytestforiva.entities.JwtResponse;
 import com.example.securitytestforiva.services.AuthzService;
 import com.example.securitytestforiva.services.JwtService;
+import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ public class AuthzController {
     private final JwtService jwtService;
 
     @PostMapping("login")
-
+    @PermitAll
     public JwtResponse auth(@RequestBody AuthQuery authQuery){
         var user = service.auth(authQuery.name(), authQuery.password());
 
@@ -29,7 +30,9 @@ public class AuthzController {
         );
     }
 
+
     @PostMapping("signup")
+    @PermitAll
     public JwtResponse signup(@RequestBody AuthQuery authQuery){
         var user = service.signup(authQuery.name(), authQuery.password());
         return new JwtResponse(
@@ -39,6 +42,7 @@ public class AuthzController {
     }
 
     @PostMapping("refresh")
+    @PermitAll
     public JwtResponse refresh(@RequestBody String refreshToken){
         final String userName = jwtService.extractUsername(refreshToken);
         var user = service.findUser(userName);
