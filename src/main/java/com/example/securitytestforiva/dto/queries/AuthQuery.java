@@ -1,2 +1,8 @@
-package com.example.securitytestforiva.dto.queries;public class AuthQuery {
+package com.example.securitytestforiva.dto.queries;
+
+public record AuthQuery(
+        String name,
+        String password
+)
+{
 }

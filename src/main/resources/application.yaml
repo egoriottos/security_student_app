@@ -1,1 +1,26 @@
-spring.application.name=SecurityTestForIva
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:6432/big_homework
+    username: document_user
+    password: secret
+
+jwt:
+  access:
+    expiration: 30
+  refresh:
+    expiration: 60
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) %logger{36} %M - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} %M - %msg%n"
+  file:
+    name: log.txt
+    level.root: info
