@@ -1,4 +1,4 @@
-package com.example.securitytestforiva.entities;
+package com.example.securitytestforiva.entities.roles;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
     private Long id;
     private String roleName;
 }

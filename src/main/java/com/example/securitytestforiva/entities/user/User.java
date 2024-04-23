@@ -1,5 +1,6 @@
-package com.example.securitytestforiva.entities;
+package com.example.securitytestforiva.entities.user;
 
+import com.example.securitytestforiva.entities.roles.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

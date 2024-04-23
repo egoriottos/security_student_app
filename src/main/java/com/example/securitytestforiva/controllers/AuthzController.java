@@ -1,12 +1,11 @@
 package com.example.securitytestforiva.controllers;
 
 import com.example.securitytestforiva.dto.queries.AuthQuery;
-import com.example.securitytestforiva.entities.JwtResponse;
+import com.example.securitytestforiva.entities.jwt.JwtResponse;
 import com.example.securitytestforiva.services.AuthzService;
 import com.example.securitytestforiva.services.JwtService;
 import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

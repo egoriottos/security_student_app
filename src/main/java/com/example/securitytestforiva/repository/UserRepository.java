@@ -1,6 +1,6 @@
 package com.example.securitytestforiva.repository;
 
-import com.example.securitytestforiva.entities.User;
+import com.example.securitytestforiva.entities.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

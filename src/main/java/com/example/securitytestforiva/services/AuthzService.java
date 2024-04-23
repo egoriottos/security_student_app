@@ -1,6 +1,6 @@
 package com.example.securitytestforiva.services;
 
-import com.example.securitytestforiva.entities.User;
+import com.example.securitytestforiva.entities.user.User;
 import com.example.securitytestforiva.repository.RoleRepository;
 import com.example.securitytestforiva.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;

@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: "egoriottos"
+    container_name: "egoriottoss"
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=big_homework'
